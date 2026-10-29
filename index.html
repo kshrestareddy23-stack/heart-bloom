@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Create heartfelt digital greeting cards for birthdays, friendship, love, good nights and more.">
+<title>HeartBloom — Cards that Speak from the Heart</title>
+<style>
+:root{--pink:#ef5278;--ink:#282735;--muted:#686779;--cream:#fffaf7;--rose:#ffe8ed;--line:#f4dce2}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:system-ui,-apple-system,Segoe UI,sans-serif;color:var(--ink);background:var(--cream)}
+header{position:sticky;top:0;z-index:10;background:#fffaf7ed;backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.nav{max-width:1120px;margin:auto;padding:14px 22px;display:flex;align-items:center;justify-content:space-between;gap:18px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--ink);font-size:1.25rem;font-weight:800}.brand-icon{font-size:2rem;color:var(--pink)}.brand small{display:block;font-size:.7rem;font-weight:500;color:var(--muted)}
+nav{display:flex;gap:22px;align-items:center}nav a{color:var(--ink);text-decoration:none;font-size:.9rem}nav a:hover{color:var(--pink)}
+.btn{display:inline-block;border:0;border-radius:999px;background:var(--pink);color:white;padding:12px 20px;font-weight:700;text-decoration:none;cursor:pointer;box-shadow:0 8px 18px #ef52782b}.btn:hover{filter:brightness(.96);transform:translateY(-1px)}
+.hero{background:linear-gradient(110deg,#fff0f2,#fffaf7 55%,#ffe5e9);overflow:hidden}
+.hero-inner{max-width:1120px;margin:auto;padding:70px 22px;display:grid;grid-template-columns:1.1fr .9fr;align-items:center;gap:36px}
+.eyebrow{color:#c33b61;font-weight:800;letter-spacing:.12em;text-transform:uppercase;font-size:.76rem}
+h1{font-size:clamp(2.4rem,5vw,4.5rem);line-height:1.07;letter-spacing:-.045em;margin:14px 0 20px}h1 span{color:var(--pink)}.hero p{max-width:520px;color:var(--muted);font-size:1.08rem;line-height:1.8}
+.hero-art{min-height:300px;display:grid;place-items:center;position:relative}.envelope{width:min(360px,90%);height:245px;border-radius:20px;background:linear-gradient(135deg,#f8a9ba,#f5c4cf);box-shadow:0 24px 55px #bd526536;transform:rotate(-5deg);position:relative;display:grid;place-items:center}.letter{background:#fffaf2;width:75%;height:75%;border-radius:8px;display:grid;place-items:center;text-align:center;padding:18px;transform:rotate(5deg);box-shadow:0 8px 20px #9b45501b}.letter strong{font-family:Georgia,serif;font-size:1.8rem;font-weight:500}.letter span{color:var(--pink);font-size:2rem}.float{position:absolute;font-size:2rem;animation:float 3s ease-in-out infinite}.f1{top:8%;left:10%}.f2{right:6%;top:20%;animation-delay:.8s}.f3{bottom:3%;left:18%;animation-delay:1.4s}@keyframes float{50%{transform:translateY(-12px) rotate(8deg)}}
+.features{max-width:1120px;margin:auto;padding:28px 22px;display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.feature{display:flex;gap:12px;align-items:center;padding:14px}.feature-icon{width:48px;height:48px;display:grid;place-items:center;background:var(--rose);border-radius:16px;font-size:1.45rem}.feature b{display:block}.feature small{color:var(--muted)}
+section{padding:52px 22px}.section-inner{max-width:1120px;margin:auto}.section-title{text-align:center;margin-bottom:28px}.section-title h2{font-size:clamp(1.8rem,3vw,2.6rem);margin:0 0 8px}.section-title p{color:var(--muted);margin:0}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.category{border:1px solid var(--line);border-radius:20px;overflow:hidden;background:white;text-align:center;transition:.2s}.category:hover{transform:translateY(-4px);box-shadow:0 15px 35px #4e28300d}.category-art{height:145px;display:grid;place-items:center;font-size:4rem}.c1{background:#ffe5ea}.c2{background:#fff0df}.c3{background:#eee7ff}.c4{background:#e5ecff}.c5{background:#e3f6e9}.c6{background:#ffeadb}.category h3{margin:15px 0 5px}.category p{margin:0 12px 18px;color:var(--muted);font-size:.9rem}.category button{margin-bottom:18px;border:1px solid var(--line);border-radius:999px;background:#fff;padding:9px 16px;cursor:pointer;color:#b83259;font-weight:700}
+.creator{background:#fff0f3}.creator-layout{display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:start}.form-card,.preview-card{background:white;border:1px solid var(--line);border-radius:22px;padding:22px;box-shadow:0 10px 30px #7c34400b}label{display:block;font-weight:700;font-size:.9rem;margin:14px 0 7px}input,textarea,select{width:100%;font:inherit;padding:12px;border:1px solid #e7d9de;border-radius:12px;background:#fffdfd;color:var(--ink)}textarea{min-height:110px;resize:vertical}.form-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}.preview-card{background:linear-gradient(145deg,#fff9f1,#ffe8ee);min-height:360px;display:grid;place-items:center}.preview-note{width:100%;max-width:360px;min-height:260px;padding:28px 22px;text-align:center;background:#fffdf7;border-radius:16px;box-shadow:0 12px 32px #8b46501b;display:flex;flex-direction:column;align-items:center;justify-content:center;white-space:pre-wrap;overflow-wrap:anywhere}.preview-note .emoji{font-size:2.6rem}.preview-note h3{font-family:Georgia,serif;font-size:1.8rem;margin:12px 0}.preview-note p{line-height:1.6;color:#5c5260}.note-from{color:#b83259;font-style:italic}
+.how-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}.step{padding:20px;border-radius:18px;background:white;border:1px solid var(--line)}.step span{font-size:1.8rem}.step h3{margin:10px 0 6px}.step p{margin:0;color:var(--muted);font-size:.9rem;line-height:1.6}
+footer{background:#292832;color:#fff;padding:32px 22px}.footer-inner{max-width:1120px;margin:auto;display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap}.footer-inner p{color:#d5d0d8;margin:6px 0}.footer-inner a{color:#fff;text-decoration:none;margin-left:14px;font-size:.9rem}
+.notice{font-size:.85rem;color:var(--muted);margin-top:12px}
+@media(max-width:760px){nav{gap:12px}nav a:not(:last-child){display:none}.hero-inner{grid-template-columns:1fr;padding:48px 22px 36px}.hero-art{min-height:260px}.features{grid-template-columns:1fr}.grid{grid-template-columns:repeat(2,1fr)}.creator-layout{grid-template-columns:1fr}.how-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:430px){.grid{grid-template-columns:1fr}.category-art{height:125px}.form-row{grid-template-columns:1fr}.how-grid{grid-template-columns:1fr}.nav{padding:12px 15px}.brand{font-size:1.05rem}}
+</style>
+</head>
+<body>
+<header><div class="nav">
+<a class="brand" href="#home"><span class="brand-icon">♡</span><span>HeartBloom<small>Cards that Speak from the Heart ♥</small></span></a>
+<nav><a href="#home">Home</a><a href="#categories">Templates</a><a href="#create">Create a Card</a><a href="#how">How it works</a></nav>
+<a class="btn" href="#create">Create free</a>
+</div></header>
+<main>
+<section class="hero" id="home"><div class="hero-inner">
+<div><div class="eyebrow">A little card, a lot of feeling</div><h1>Turn Your Feelings Into <span>Beautiful Cards</span> ♡</h1><p>Create a heartfelt digital card for birthdays, love, friendship, apologies and everyday surprises. Add your own message and make someone's day.</p><a class="btn" href="#create">Create your card →</a></div>
+<div class="hero-art" aria-label="Illustration of a pink envelope"><span class="float f1">♡</span><span class="float f2">✿</span><span class="float f3">♥</span><div class="envelope"><div class="letter"><strong>Just for you</strong><span>♡</span><small>A little reminder that you matter.</small></div></div></div>
+</div></section>
+<div class="features">
+<div class="feature"><div class="feature-icon">♡</div><div><b>Beautiful templates</b><small>Sweet styles for every occasion</small></div></div>
+<div class="feature"><div class="feature-icon">✎</div><div><b>Personalize easily</b><small>Add names and your own words</small></div></div>
+<div class="feature"><div class="feature-icon">↗</div><div><b>Share the feeling</b><small>Copy your message or save it</small></div></div>
+</div>
+<section id="categories"><div class="section-inner"><div class="section-title"><h2>♡ Choose Your Card ♡</h2><p>Pick a category and start creating something special.</p></div>
+<div class="grid">
+<article class="category"><div class="category-art c1">🎂</div><h3>Birthday</h3><p>Make their day extra special.</p><button onclick="chooseCategory('Birthday','🎂')">Make a card →</button></article>
+<article class="category"><div class="category-art c2">💌</div><h3>Love Letters</h3><p>Pour your heart out.</p><button onclick="chooseCategory('A little love note','💌')">Make a card →</button></article>
+<article class="category"><div class="category-art c3">🧸</div><h3>Friendship</h3><p>Celebrate your bond.</p><button onclick="chooseCategory('Friendship','🧸')">Make a card →</button></article>
+<article class="category"><div class="category-art c4">🌙</div><h3>Good Night</h3><p>Send sweet dreams.</p><button onclick="chooseCategory('Good Night','🌙')">Make a card →</button></article>
+<article class="category"><div class="category-art c5">🌷</div><h3>Sorry Cards</h3><p>Say it sincerely.</p><button onclick="chooseCategory('I am sorry','🌷')">Make a card →</button></article>
+<article class="category"><div class="category-art c6">🎁</div><h3>Secret Messages</h3><p>Share a little surprise.</p><button onclick="chooseCategory('A secret message','🎁')">Make a card →</button></article>
+</div></div></section>
+<section class="creator" id="create"><div class="section-inner"><div class="section-title"><h2>Create Your Card 💌</h2><p>Write a message and watch your card preview update.</p></div>
+<div class="creator-layout"><form class="form-card" id="cardForm">
+<label for="category">Card type</label><select id="categorySelect"><option value="Birthday">Birthday</option><option value="A little love note">Love Letter</option><option value="Friendship">Friendship</option><option value="Good Night">Good Night</option><option value="I am sorry">Sorry Card</option><option value="A secret message">Secret Message</option></select>
+<div class="form-row"><div><label for="toName">To</label><input id="toName" placeholder="Someone special" maxlength="45"></div><div><label for="fromName">From</label><input id="fromName" placeholder="Your name" maxlength="45"></div></div>
+<label for="message">Your message</label><textarea id="message" maxlength="500" placeholder="Write something from your heart...">You make ordinary days feel special. Sending you a little happiness today! ♡</textarea>
+<label for="theme">Card style</label><select id="theme"><option value="rose">Rose pink</option><option value="lavender">Lavender</option><option value="mint">Mint green</option><option value="sunshine">Sunshine</option></select>
+<button class="btn" type="button" id="downloadBtn" style="margin-top:18px">Save card as text</button>
+<button class="btn" type="button" id="shareBtn" style="margin-top:18px;background:#353340">Share message</button>
+<p class="notice">This starter version previews your card in your browser. The buttons share or save the message; public shareable card links and accounts need a later online-storage feature.</p>
+</form>
+<div class="preview-card"><div class="preview-note" id="preview"><div class="emoji" id="previewEmoji">🎂</div><h3 id="previewTitle">Birthday</h3><p id="previewTo">To someone special,</p><p id="previewMessage">You make ordinary days feel special. Sending you a little happiness today! ♡</p><div class="note-from" id="previewFrom">With love, You</div></div></div>
+</div></div></section>
+<section id="how"><div class="section-inner"><div class="section-title"><h2>How It Works</h2><p>A thoughtful card in just a few steps.</p></div><div class="how-grid">
+<div class="step"><span>① ✿</span><h3>Choose a card</h3><p>Pick a category that matches the moment.</p></div>
+<div class="step"><span>② ✎</span><h3>Make it yours</h3><p>Add a name, a personal message and a style.</p></div>
+<div class="step"><span>③ ♡</span><h3>Preview it</h3><p>See how your card looks before sharing.</p></div>
+<div class="step"><span>④ ↗</span><h3>Share happiness</h3><p>Share your message with someone special.</p></div>
+</div></div></section>
+</main>
+<footer><div class="footer-inner"><div><a class="brand" href="#home" style="color:white"><span class="brand-icon">♡</span><span>HeartBloom<small style="color:#d5d0d8">Cards that Speak from the Heart ♥</small></span></a><p>Because every feeling deserves a card.</p></div><div><a href="#home">Home</a><a href="#categories">Templates</a><a href="#create">Create</a></div><small>© <span id="year"></span> HeartBloom · Made with ♡</small></div></footer>
+<script>
+const $=id=>document.getElementById(id);
+const emojis={'Birthday':'🎂','A little love note':'💌','Friendship':'🧸','Good Night':'🌙','I am sorry':'🌷','A secret message':'🎁'};
+const themes={rose:['#fffdf7','#ffe7ee'],lavender:['#fffaff','#eee7ff'],mint:['#fbfff9','#e1f5e8'],sunshine:['#fffdf4','#fff0cf']};
+function chooseCategory(title,emoji){$('categorySelect').value=title;updatePreview();$('create').scrollIntoView({behavior:'smooth'});}
+function updatePreview(){
+ const title=$('categorySelect').value;const to=$('toName').value.trim()||'someone special';const from=$('fromName').value.trim()||'You';const msg=$('message').value;
+ $('previewEmoji').textContent=emojis[title]||'💌';$('previewTitle').textContent=title;$('previewTo').textContent='To '+to+',';$('previewMessage').textContent=msg;$('previewFrom').textContent='With love, '+from;
+ const colors=themes[$('theme').value];$('preview').style.background=colors[0];$('preview').style.borderTop='7px solid '+colors[1];
+}
+['categorySelect','toName','fromName','message','theme'].forEach(id=>$(id).addEventListener('input',updatePreview));
+$('downloadBtn').addEventListener('click',()=>{const content=`${$('previewTitle').textContent}\n\n${$('previewTo').textContent}\n\n${$('previewMessage').textContent}\n\n${$('previewFrom').textContent}\n\nMade with HeartBloom ♡`;const blob=new Blob([content],{type:'text/plain;charset=utf-8'});const url=URL.createObjectURL(blob);const a=document.createElement('a');a.href=url;a.download='my-heartbloom-card.txt';a.click();URL.revokeObjectURL(url);});
+$('shareBtn').addEventListener('click',async()=>{const content=`${$('previewTitle').textContent}\n\n${$('previewTo').textContent}\n\n${$('previewMessage').textContent}\n\n${$('previewFrom').textContent}\n\nMade with HeartBloom ♡`;try{if(navigator.share){await navigator.share({title:'A card from HeartBloom',text:content});}else if(navigator.clipboard){await navigator.clipboard.writeText(content);alert('Card message copied! You can paste it into WhatsApp.');}else{prompt('Copy your card message:',content);}}catch(e){}});
+$('year').textContent=new Date().getFullYear();updatePreview();
+</script>
+</body>
+</html>
